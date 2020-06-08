@@ -1,0 +1,12 @@
+{
+  "extends": "semistandard",
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "rules": {
+    "no-console": ["error", {"allow": ["info", "warn", "error", "debug", "trace"]}],
+    "space-before-function-paren": "off"
+  },
+  "ignorePatterns": ["pxlsMarkdown.js", "pxlsMarkdown.min.js"]
+}

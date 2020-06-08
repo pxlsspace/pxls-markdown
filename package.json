@@ -1,0 +1,32 @@
+{
+  "name": "pxls-markdown",
+  "version": "1.0.0",
+  "description": "unified + remark-parse + internal plugins used for Pxls chat",
+  "main": "index.js",
+  "scripts": {
+    "build-bundle": "browserify index.js -s pxlsMarkdown -o pxlsMarkdown.js",
+    "build-mangle": "browserify index.js -s pxlsMarkdown -p tinyify -o pxlsMarkdown.min.js",
+    "build": "npm run build-bundle && npm run build-mangle",
+    "test": "echo \"Error: no test specified. Remind netux to implement jest tests.\" && exit 1"
+  },
+  "keywords": [
+    "pxls",
+    "pxls.space",
+    "markdown",
+    "unified",
+    "remark",
+    "remark-parse"
+  ],
+  "author": "Martín \"Netux\" Rodriguez",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "remark-parse": "^8.0.2",
+    "unified": "^9.0.0"
+  },
+  "devDependencies": {
+    "browserify": "^16.5.1",
+    "jest": "^26.0.1",
+    "tinyify": "^2.5.2"
+  }
+}
