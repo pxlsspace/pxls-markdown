@@ -84,6 +84,7 @@ module.exports = function(opts) {
 	this.Compiler = Compiler;
 
 	function Compiler(node) {
-		return toDOM(node, opts ? opts.customRenderers : DEFAULT_RENDERERS);
+		return toDOM(node, Object.assign({}, DEFAULT_RENDERERS, opts ? opts.customRenderers : null));
 	}
-}
+};
+module.exports.DEFAULT_RENDERERS = DEFAULT_RENDERERS;
