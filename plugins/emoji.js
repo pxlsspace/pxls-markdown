@@ -55,6 +55,14 @@ module.exports = function(opts) {
 				}
 			}
 
+			if (emojiIdx === null) {
+				return;
+			}
+
+			if (silent) {
+				return true;
+			}
+
 			return eat(raw)({
 				type: 'emoji',
 				value: raw,
