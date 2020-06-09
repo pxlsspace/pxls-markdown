@@ -38,15 +38,15 @@ const options = {
 		}
 	}
 };
-let processor = pxlsMarkdown.createProcessor(options);
+let processor = pxlsMarkdown.makeProcessor(options);
 
 // the processor is an unified Processor, you can use() any plugins you want.
 // processor = processor.use(myNeatPlugin, neatPluginConfig);
 
 // parse a markdown string
 const src = '**my markdown**';
-const results = processor.process(src); // returns a list of dom elements
-
-// populate an output element with results
-crel(outputElement, results);
+processor.process(src, function(file) {
+	// populate an output element with results
+	crel(outputElement, file.result);
+});
 ```
