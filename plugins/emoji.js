@@ -55,8 +55,6 @@ module.exports = function(opts) {
 				}
 			}
 
-			console.log(raw)
-
 			return eat(raw)({
 				type: 'emoji',
 				value: raw,
