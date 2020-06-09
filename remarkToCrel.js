@@ -33,6 +33,7 @@ const DEFAULT_RENDERERS = {
   delete: (node, next) => crel('s', next()),
   inlineCode: (node, next) => crel('code', next()),
   mention: (node, next) => crel('span', { class: 'mention' }, next()),
+  coordinate: (node, next) => crel('a', { href: node.url }, next()),
   emoji: (node, next) => crel('img', {
     class: 'emoji',
     title: node.emojiName,

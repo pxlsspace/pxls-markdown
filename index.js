@@ -7,7 +7,8 @@ const plugins = {
 	methodWhitelist: require('./plugins/methodWhitelist.js'),
 	underline: require('./plugins/underline.js'),
 	mention: require('./plugins/mention.js'),
-	emoji: require('./plugins/emoji.js')
+	emoji: require('./plugins/emoji.js'),
+	coordinate: require('./plugins/coordinate')
 };
 
 function makeProcessor(opts) {
@@ -15,12 +16,13 @@ function makeProcessor(opts) {
 		// Parser
 		.use(remarkParse, Object.assign({ gfm: true, commonmark: true }, opts.remark))
 		//   Parser plugins
-		.use(plugins.underline)
-		.use(plugins.mention, { mentionCallback: opts.mentionCallback })
-		.use(plugins.emoji, { emojiDB: opts.emojiDB, emojiRegex: opts.emojiRegex })
-		.use(plugins.methodWhitelist, opts.whitelist)
+		.use(plugins.underline, opts.underline)
+		.use(plugins.mention, opts.mention)
+		.use(plugins.emoji, opts.emoji)
+		.use(plugins.coordinate, opts.coordinate)
+		.use(plugins.methodWhitelist, opts.methodWhitelist)
 		// Compiler
-		.use(remarkToCrel, opts.remarkToCrelOpts)
+		.use(remarkToCrel, opts.remarkToCrel)
 }
 
 module.exports = {
