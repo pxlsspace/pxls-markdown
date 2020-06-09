@@ -1,5 +1,4 @@
-/* global crel */
-
+const crel = global.crel || require('crel');
 
 // Taken from twemoji.convert.toCodePoint()
 function toTwemojiCodepoints(src) {

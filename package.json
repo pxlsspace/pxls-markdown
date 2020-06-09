@@ -4,8 +4,8 @@
   "description": "unified + remark-parse + internal plugins used for Pxls chat",
   "main": "index.js",
   "scripts": {
-    "build-bundle": "browserify index.js -s pxlsMarkdown -o pxlsMarkdown.js",
-    "build-mangle": "browserify index.js -s pxlsMarkdown -p tinyify -o pxlsMarkdown.min.js",
+    "build-bundle": "browserify index.js -s pxlsMarkdown --ignore crel -o pxlsMarkdown.js",
+    "build-mangle": "browserify index.js -s pxlsMarkdown --ignore crel -p tinyify -o pxlsMarkdown.min.js",
     "build": "npm run build-bundle && npm run build-mangle",
     "test": "echo \"Error: no test specified. Remind netux to implement jest tests.\" && exit 1"
   },
@@ -21,6 +21,7 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
+    "crel": "^4.2.1",
     "remark-parse": "^8.0.2",
     "unified": "^9.0.0"
   },
