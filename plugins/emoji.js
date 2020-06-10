@@ -1,4 +1,14 @@
 module.exports = function(opts) {
+	if (!opts) {
+		throw new Error('Missing configuration for emoji plugin');
+	}
+	if (!opts.emojiDB) {
+		throw new Error('Missing emojiDB configuration for emoji plugin');
+	}
+	if (!opts.emojiRegex) {
+		throw new Error('Missing emojiRegex configuration for emoji plugin');
+	}
+
 	const emojisCode = Object.keys(opts.emojiDB);
 	const emojisRaw = Object.values(opts.emojiDB);
 
