@@ -12,7 +12,7 @@ module.exports = function(opts) {
 		if (match) {
 			const [ all, username ] = match;
 
-			if (opts.mentionCallback) {
+			if (opts && opts.mentionCallback) {
 				opts.mentionCallback(username);
 			}
 
