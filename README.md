@@ -17,28 +17,25 @@ Somewhere in your page:
 In your code:
 ```js
 // create processor
-const options = {
-	remark: {
-		// remark-parse config
-	},
-	emoji: {
+let processor = pxlsMarkdown.processor()
+	.use(pxlsMarkdown.plugins.emoji, {
 		emojiDB: window.emojiDB // See https://github.com/pxlsspace/Pxls/blob/master/resources/public/emojiDB.min.js
 		emojiRegex: window.emojiRegex // For example, https://www.npmjs.com/package/emoji-regex
-	},
-	mention: {
+	})
+	.use(pxlsMarkdown.plugins.mention, {
 		mentionCallback: (username) => console.info(`found a mention for ${username}!`)
-	},
-	methodWhitelist: {
-		block: [ 'paragraph', 'blankLine' ],
-		inline: [ 'coordinate', 'emoji_raw', 'emoji_name', 'mention', 'escape', 'autoLink', 'url', 'underline', 'strong', 'emphasis', 'deletion', 'code', 'text' ]
-	},
-	remarkToCrel: {
-		customElements: {
-			myCustomElement
+	})
+	.use(pxlsMarkdown.plugins.methodWhitelist, {
+		methodWhitelist: {
+			block: [ 'blankLine' ],
+			inline: [ 'coordinate', 'emoji_raw', 'emoji_name', 'mention', 'escape', 'autoLink', 'url', 'underline', 'strong', 'emphasis', 'deletion', 'code' ]
 		}
-	}
-};
-let processor = pxlsMarkdown.makeProcessor(options);
+	})
+	.use(pxlsMarkdown.remarkToCrel, {
+		customElements: {
+			nodeType: (node, next) => crel('span', { 'class': `mdst-${node.type}` }, next())
+		}
+	});
 
 // the processor is an unified Processor, you can use() any plugins you want.
 // processor = processor.use(myNeatPlugin, neatPluginConfig);

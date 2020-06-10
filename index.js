@@ -11,21 +11,20 @@ const plugins = {
 	coordinate: require('./plugins/coordinate')
 };
 
-function makeProcessor(opts) {
-	return unified()
-		// Parser
-		.use(remarkParse, Object.assign({ gfm: true, commonmark: true }, opts.remark))
-		//   Parser plugins
-		.use(plugins.underline, opts.underline)
-		.use(plugins.mention, opts.mention)
-		.use(plugins.emoji, opts.emoji)
-		.use(plugins.coordinate, opts.coordinate)
-		.use(plugins.methodWhitelist, opts.methodWhitelist)
-		// Compiler
-		.use(remarkToCrel, opts.remarkToCrel)
-}
+const processor = unified()
+	// Parser
+	.use(remarkParse, { gfm: true, commonmark: true })
+	//   Parser plugins
+	.use(plugins.underline)
+	.use(plugins.mention)
+	.use(plugins.emoji)
+	.use(plugins.coordinate)
+	.use(plugins.methodWhitelist)
+	// Compiler
+	.use(remarkToCrel)
 
 module.exports = {
-	makeProcessor,
-	plugins
+	processor,
+	plugins,
+	remarkToCrel
 };
