@@ -1,7 +1,7 @@
 const unified = require('unified');
 const remarkParse = require('remark-parse');
 
-const remarkToCrel = require('./remarkToCrel.js');
+const remarkCrel = require('./remarkCrel.js');
 
 const plugins = {
 	methodWhitelist: require('./plugins/methodWhitelist.js'),
@@ -21,10 +21,10 @@ const processor = unified()
 	.use(plugins.coordinate)
 	.use(plugins.methodWhitelist)
 	// Compiler
-	.use(remarkToCrel)
+	.use(remarkCrel, { ignoreParagraphs: true })
 
 module.exports = {
 	processor,
 	plugins,
-	remarkToCrel
+	remarkCrel
 };
