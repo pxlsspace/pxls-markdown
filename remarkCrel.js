@@ -86,6 +86,7 @@ module.exports = function(opts) {
     coordinate: (node, next) => crel('a', { href: node.url }, next()),
     emoji: (node, next) => crel('img', {
       class: 'emoji',
+      alt: node.emojiName,
       title: node.emojiName,
       src: `https://twemoji.maxcdn.com/v/13.0.0/72x72/${toTwemojiCodepoints(node.value)}.png`
     })
