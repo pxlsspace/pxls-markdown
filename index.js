@@ -21,7 +21,7 @@ const processor = unified()
 	.use(plugins.coordinate)
 	.use(plugins.methodWhitelist)
 	// Compiler
-	.use(remarkCrel, { ignoreParagraphs: true })
+	.use(remarkCrel, { ignoreParagraphs: true });
 
 module.exports = {
 	processor,

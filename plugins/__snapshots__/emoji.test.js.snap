@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tokenizes ":dog:" 1`] = `
+Array [
+  Object {
+    "children": Array [
+      Object {
+        "emojiName": "dog",
+        "type": "emoji",
+        "value": "🐶",
+      },
+    ],
+    "type": "paragraph",
+  },
+]
+`;
+
+exports[`tokenizes "🐶" 1`] = `
+Array [
+  Object {
+    "children": Array [
+      Object {
+        "emojiName": "dog",
+        "type": "emoji",
+        "value": "🐶",
+      },
+    ],
+    "type": "paragraph",
+  },
+]
+`;

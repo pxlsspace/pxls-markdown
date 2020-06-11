@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tokenizes "@mention" correctly 1`] = `
+Array [
+  Object {
+    "children": Array [
+      Object {
+        "type": "mention",
+        "username": "mention",
+        "value": "@mention",
+      },
+    ],
+    "type": "paragraph",
+  },
+]
+`;

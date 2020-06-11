@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`does not do anything when no options are passed 1`] = `
+Array [
+  Object {
+    "children": Array [
+      Object {
+        "type": "text",
+        "value": "All ",
+      },
+      Object {
+        "children": Array [
+          Object {
+            "type": "text",
+            "value": "off",
+          },
+        ],
+        "type": "emphasis",
+      },
+      Object {
+        "type": "text",
+        "value": " ",
+      },
+      Object {
+        "children": Array [
+          Object {
+            "type": "text",
+            "value": "these",
+          },
+        ],
+        "type": "strong",
+      },
+      Object {
+        "type": "text",
+        "value": " ",
+      },
+      Object {
+        "type": "inlineCode",
+        "value": "should",
+      },
+    ],
+    "depth": 1,
+    "type": "heading",
+  },
+  Object {
+    "children": Array [
+      Object {
+        "checked": null,
+        "children": Array [
+          Object {
+            "children": Array [
+              Object {
+                "type": "text",
+                "value": "still!",
+              },
+            ],
+            "type": "paragraph",
+          },
+        ],
+        "spread": false,
+        "type": "listItem",
+      },
+      Object {
+        "checked": null,
+        "children": Array [
+          Object {
+            "children": Array [
+              Object {
+                "type": "text",
+                "value": "work!",
+              },
+            ],
+            "type": "paragraph",
+          },
+        ],
+        "spread": false,
+        "type": "listItem",
+      },
+    ],
+    "ordered": true,
+    "spread": false,
+    "start": 1,
+    "type": "list",
+  },
+]
+`;
