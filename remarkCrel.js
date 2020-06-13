@@ -1,28 +1,5 @@
 const crel = global.crel || require('crel');
 
-// Taken from twemoji.convert.toCodePoint()
-function toTwemojiCodepoints(src) {
-  if (src.indexOf('\u200D') === -1) {
-    src = src.replace('\uFE0F', '');
-  }
-
-  const result = [];
-  let prevChar = 0;
-  for (let i = 0; i < src.length; i++) {
-    const char = src.charCodeAt(i);
-    if (prevChar) {
-      result.push((0x10000 + (prevChar - 0xd800 << 10) + (char - 0xdc00)).toString(16));
-      prevChar = null;
-    } else if (0xd800 <= char && char <= 0xdbff) {
-      prevChar = char;
-    } else {
-      result.push(char.toString(16));
-    }
-  }
-  return result.join('-');
-}
-
-
 module.exports = function(opts) {
   opts = Object.assign({ ignoreParagraphs: false }, opts);
 
@@ -84,11 +61,6 @@ module.exports = function(opts) {
     inlineCode: (node, next) => crel('code', next()),
     mention: (node, next) => crel('span', { class: 'mention' }, next()),
     coordinate: (node, next) => crel('a', { href: node.url }, next()),
-    emoji: (node, next) => crel('img', {
-      class: 'emoji',
-      alt: node.emojiName,
-      title: node.emojiName,
-      src: `https://twemoji.maxcdn.com/v/13.0.0/72x72/${toTwemojiCodepoints(node.value)}.png`
-    })
+    emoji: (node, next) => crel('span', { title: `:${node.emojiName}:` }, node.value)
   };
 };
