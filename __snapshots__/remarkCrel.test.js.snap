@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`compiles "*test*" correctly 1`] = `
+Array [
+  <p>
+    <i>
+      test
+    </i>
+  </p>,
+]
+`;
+
+exports[`compiles "__test__" with the underline plugin correctly 1`] = `
+Array [
+  <p>
+    <u>
+      test
+    </u>
+  </p>,
+]
+`;
+
+exports[`compiles "test" correctly 1`] = `
+Array [
+  <p>
+    test
+  </p>,
+]
+`;
+
+exports[`compiles "test" with ignoreParagraphs = true correctly 1`] = `
+Array [
+  "test",
+]
+`;

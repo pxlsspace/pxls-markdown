@@ -7,7 +7,7 @@
     "build-bundle": "browserify index.js -s pxlsMarkdown --ignore crel -o pxlsMarkdown.js",
     "build-mangle": "browserify index.js -s pxlsMarkdown --ignore crel -p tinyify -o pxlsMarkdown.min.js",
     "build": "npm run build-bundle && npm run build-mangle",
-    "test": "echo \"Error: no test specified. Remind netux to implement jest tests.\" && exit 1"
+    "test": "jest"
   },
   "keywords": [
     "pxls",

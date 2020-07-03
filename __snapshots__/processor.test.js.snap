@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders everything correctly 1`] = `
+Array [
+  "	",
+  <i>
+    italic
+  </i>,
+  " ",
+  <i>
+    italic
+  </i>,
+  "
+	",
+  <b>
+    bold
+  </b>,
+  "
+	",
+  <u>
+    underline
+  </u>,
+  "
+	",
+  <s>
+    strikethrough
+  </s>,
+  "
+	",
+  <code>
+    inline code
+  </code>,
+  "
+	",
+  <a
+    href="https://a.link"
+    target="_blank"
+  >
+    https://a.link
+  </a>,
+  "
+	",
+  <span
+    class="mention"
+  >
+    @mention
+  </span>,
+  "
+	",
+  <img
+    alt="dog"
+    class="emoji"
+    src="https://twemoji.maxcdn.com/v/13.0.0/72x72/1f436.png"
+    title="dog"
+  />,
+  " ",
+  <img
+    alt="grinning"
+    class="emoji"
+    src="https://twemoji.maxcdn.com/v/13.0.0/72x72/1f601.png"
+    title="grinning"
+  />,
+  "
+	",
+  <a
+    href="#x=1234&y=567&scale=50"
+  >
+    (1234, 567, 50x)
+  </a>,
+  "
+	",
+  "*",
+  "escaping* ",
+  "_",
+  "any_ ",
+  "*",
+  "*markup** ",
+  "_",
+  "_like__ ",
+  "~",
+  "~this~~ (",
+  "\`",
+  "with\` ",
+  ":",
+  "a: ",
+  "@",
+  "backslash)
+	",
+]
+`;

@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tokenizes "__ __" correctly 1`] = `
+Array [
+  Object {
+    "children": Array [
+      Object {
+        "type": "text",
+        "value": "some test __ __",
+      },
+    ],
+    "type": "paragraph",
+  },
+]
+`;
+
+exports[`tokenizes "__\\n__" correctly 1`] = `
+Array [
+  Object {
+    "children": Array [
+      Object {
+        "type": "text",
+        "value": "__
+__",
+      },
+    ],
+    "type": "paragraph",
+  },
+]
+`;
+
+exports[`tokenizes "____" correctly 1`] = `
+Array [
+  Object {
+    "children": Array [
+      Object {
+        "type": "text",
+        "value": "some text ____",
+      },
+    ],
+    "type": "paragraph",
+  },
+]
+`;
+
+exports[`tokenizes "___underline and italic text___" correctly 1`] = `
+Array [
+  Object {
+    "children": Array [
+      Object {
+        "children": Array [
+          Object {
+            "children": Array [
+              Object {
+                "type": "text",
+                "value": "underline and italic text",
+              },
+            ],
+            "type": "emphasis",
+          },
+        ],
+        "type": "underline",
+      },
+    ],
+    "type": "paragraph",
+  },
+]
+`;
+
+exports[`tokenizes "__underline text__" correctly 1`] = `
+Array [
+  Object {
+    "children": Array [
+      Object {
+        "children": Array [
+          Object {
+            "type": "text",
+            "value": "underline text",
+          },
+        ],
+        "type": "underline",
+      },
+    ],
+    "type": "paragraph",
+  },
+]
+`;

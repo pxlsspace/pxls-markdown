@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`does not tokenize "(no coordinates)" 1`] = `
+Array [
+  Object {
+    "children": Array [
+      Object {
+        "type": "text",
+        "value": "(no coordinates)",
+      },
+    ],
+    "type": "paragraph",
+  },
+]
+`;
+
+exports[`tokenizes "(10, 20)" correctly 1`] = `
+Array [
+  Object {
+    "children": Array [
+      Object {
+        "children": Array [
+          Object {
+            "type": "text",
+            "value": "(10, 20)",
+          },
+        ],
+        "scale": null,
+        "type": "coordinate",
+        "url": "#x=10&y=20",
+        "x": 10,
+        "y": 20,
+      },
+    ],
+    "type": "paragraph",
+  },
+]
+`;
+
+exports[`tokenizes "(10, 20, 30)" correctly 1`] = `
+Array [
+  Object {
+    "children": Array [
+      Object {
+        "children": Array [
+          Object {
+            "type": "text",
+            "value": "(10, 20, 30)",
+          },
+        ],
+        "scale": 30,
+        "type": "coordinate",
+        "url": "#x=10&y=20&scale=30",
+        "x": 10,
+        "y": 20,
+      },
+    ],
+    "type": "paragraph",
+  },
+]
+`;
