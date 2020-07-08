@@ -47,19 +47,17 @@ Array [
   </span>,
   "
 	",
-  <img
-    alt="dog"
-    class="emoji"
-    src="https://twemoji.maxcdn.com/v/13.0.0/72x72/1f436.png"
-    title="dog"
-  />,
+  <span
+    title=":dog:"
+  >
+    🐶
+  </span>,
   " ",
-  <img
-    alt="grinning"
-    class="emoji"
-    src="https://twemoji.maxcdn.com/v/13.0.0/72x72/1f601.png"
-    title="grinning"
-  />,
+  <span
+    title=":grinning:"
+  >
+    😁
+  </span>,
   "
 	",
   <a
