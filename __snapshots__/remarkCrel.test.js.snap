@@ -10,7 +10,7 @@ Array [
 ]
 `;
 
-exports[`compiles "[fa.fa-discord]" with the favicon plugin correctly 1`] = `
+exports[`compiles "[fa.fa-discord]" with the FontAwesomeIcon plugin correctly 1`] = `
 Array [
   <p>
     <i

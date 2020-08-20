@@ -1,10 +1,10 @@
 const { processor, expectProcessorParse } = require('../testUtil.js');
-const favicon = require('./favicon.js');
+const fontAwesome = require('./fontAwesomeIcon.js');
 
-processor.use(favicon);
+processor.use(fontAwesome);
 
 test(
-	'tokenizes "[fa]" as a favicon',
+	'tokenizes "[fa]" as a FontAwesome icon',
 	() => expectProcessorParse('[fa]').toMatchSnapshot()
 );
 test(

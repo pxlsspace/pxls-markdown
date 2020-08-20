@@ -1,13 +1,13 @@
 module.exports = function() {
-	this.Parser.prototype.inlineMethods.splice(0, 0, 'favicon');
+	this.Parser.prototype.inlineMethods.splice(0, 0, 'fontAwesomeIcon');
 
-	tokenizeFavicon.notInLink = true;
-	tokenizeFavicon.locator = function(value, fromIndex) {
+	tokenizeFontAwesomeIcon.notInLink = true;
+	tokenizeFontAwesomeIcon.locator = function(value, fromIndex) {
 		return value.indexOf('[fa', fromIndex);
 	};
-	this.Parser.prototype.inlineTokenizers.favicon = tokenizeFavicon;
+	this.Parser.prototype.inlineTokenizers.fontAwesomeIcon = tokenizeFontAwesomeIcon;
 
-	function tokenizeFavicon(eat, value, silent) {
+	function tokenizeFontAwesomeIcon(eat, value, silent) {
 		const endIdx = value.indexOf(']');
 		if (!value.startsWith('[fa') || endIdx === -1) {
 			return false;
@@ -19,7 +19,7 @@ module.exports = function() {
 
 		const classes = value.substring(1, endIdx).split('.');
 		return eat(value.substr(0, endIdx + 1))({
-			type: 'favicon',
+			type: 'fontAwesomeIcon',
 			classes
 		});
 	}
