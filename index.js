@@ -8,7 +8,8 @@ const plugins = {
 	underline: require('./plugins/underline.js'),
 	mention: require('./plugins/mention.js'),
 	emoji: require('./plugins/emoji.js'),
-	coordinate: require('./plugins/coordinate')
+	coordinate: require('./plugins/coordinate'),
+	favicon: require('./plugins/favicon')
 };
 
 const processor = unified()
@@ -19,6 +20,7 @@ const processor = unified()
 	.use(plugins.mention)
 	.use(plugins.emoji)
 	.use(plugins.coordinate)
+	.use(plugins.favicon)
 	.use(plugins.methodWhitelist)
 	// Compiler
 	.use(remarkCrel, { ignoreParagraphs: true });
