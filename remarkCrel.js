@@ -61,6 +61,7 @@ module.exports = function(opts) {
     inlineCode: (node, next) => crel('code', next()),
     mention: (node, next) => crel('span', { class: 'mention' }, next()),
     coordinate: (node, next) => crel('a', { href: node.url }, next()),
-    emoji: (node, next) => crel('span', { title: `:${node.emojiName}:` }, node.value)
+    emoji: (node, next) => crel('span', { title: `:${node.emojiName}:` }, node.value),
+    favicon: (node, next) => crel('i', { class: node.classes.join(' ') })
   };
 };

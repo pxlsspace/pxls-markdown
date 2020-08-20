@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tokenizes "[fa]" as a favicon 1`] = `
+Array [
+  Object {
+    "children": Array [
+      Object {
+        "classes": Array [
+          "fa",
+        ],
+        "type": "favicon",
+      },
+    ],
+    "type": "paragraph",
+  },
+]
+`;
+
+exports[`tokenizes "[fab.fa-discord]" correctly 1`] = `
+Array [
+  Object {
+    "children": Array [
+      Object {
+        "classes": Array [
+          "fab",
+          "fa-discord",
+        ],
+        "type": "favicon",
+      },
+    ],
+    "type": "paragraph",
+  },
+]
+`;

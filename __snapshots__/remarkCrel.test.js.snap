@@ -10,6 +10,16 @@ Array [
 ]
 `;
 
+exports[`compiles "[fa.fa-discord]" with the favicon plugin correctly 1`] = `
+Array [
+  <p>
+    <i
+      class="fa fa-discord"
+    />
+  </p>,
+]
+`;
+
 exports[`compiles "__test__" with the underline plugin correctly 1`] = `
 Array [
   <p>

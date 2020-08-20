@@ -13,3 +13,7 @@ test('compiles "__test__" with the underline plugin correctly', () => {
 	const configuredProcessor = processor().use(require('./plugins/underline'));
 	expectProcessorOutput('__test__', configuredProcessor).toMatchSnapshot();
 });
+test('compiles "[fa.fa-discord]" with the favicon plugin correctly', () => {
+	const configuredProcessor = processor().use(require('./plugins/favicon'));
+	expectProcessorOutput('[fa.fa-discord]', configuredProcessor).toMatchSnapshot();
+});
