@@ -34,7 +34,7 @@ module.exports = function(opts) {
 				return eat(all)({
 					type: 'emoji',
 					value: opts.emojiDB[emojiName],
-					emojiName
+					emojiName: code
 				});
 			}
 		}
